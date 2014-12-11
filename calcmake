@@ -1,0 +1,10 @@
+
+default: all
+
+all: edsth 
+
+edsth: edsth.o
+	gcc -g -o edsth -L/usr/local/lib edsth.o -lfann -lfloatfann
+
+edsth.o: analyse.c
+	gcc -g -o edsth.o -c -Wall analyse.c

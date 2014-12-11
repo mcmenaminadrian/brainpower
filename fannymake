@@ -1,0 +1,10 @@
+
+default: all
+
+all: brainpower
+
+brainpower: brainpower.o
+	gcc -g -o brainpower -L/usr/local/lib brainpower.o -lfann -lfloatfann
+
+brainpower.o: main.c
+	gcc -g -o brainpower.o -c -Wall main.c
